@@ -1,6 +1,5 @@
 from collections import deque
 from ctypes import sizeof
-from re import L
 total = int(input("Enter the stack size :"))
 stack = deque()
 # Here we have added the the values into stack
