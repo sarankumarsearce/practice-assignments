@@ -1,38 +1,49 @@
-# once again starting with singlylinked list
 class Node:
-    def __init__(self, data, link):
+    def __init__(self, data):
         self.data = data
-        self.link = link
+        self.next = None
 
 
-class Single:
+class singlelist:
     def __init__(self):
         self.head = None
 
-    def end(self, data):
-        if self.head is None:
-            self.head = Node(data, None)
-            return
+    def begin(self, data):
+        nb = Node(data)
+        self.head = nb
+        nb.next = n
 
+    def last(self, data):
+        ln = Node(data)
+        n2.next = ln
+        ln.next = None
+
+    def middle(self, pos, data):
+        mn = Node(data)
         temp = self.head
-        while temp.link:
-            temp = temp.link
-            print(temp.data, "-->", end="")
+        for i in range(pos-2):
+            temp = temp.next
+        mn.next = temp.next
+        temp.next = mn
 
-        temp.link = Node(data, None)
-
-    def insert(self, datalist):
-        self.head = None
-        for i in datalist:
-            self.end(i)
-
-
-sll = Single()
-sll.insert([1, 2, 3, 4])
+    def display(self):
+        if self.head is None:
+            print("Empty list")
+        else:
+            temp = self.head
+            while temp:
+                print(temp.data, "-->", end=" ")
+                temp = temp.next
 
 
-# sll.head = n
-# n1 = Node(200)
-# n.link = n1
-# n2 = Node(300)
-# n1.link = n2
+sl = singlelist()
+n = Node(100)
+sl.head = n
+n1 = Node(200)
+n.next = n1
+n2 = Node(300)
+n1.next = n2
+sl.begin(76)
+sl.last(23)
+sl.middle(4, 96)
+sl.display()
